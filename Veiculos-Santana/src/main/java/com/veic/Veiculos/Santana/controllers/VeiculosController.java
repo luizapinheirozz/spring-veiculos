@@ -225,6 +225,10 @@ public class VeiculosController {
         return "veiculos/details";
     }
 
+    @GetMapping("/categorias")
+    public String showCategorias(Model model) {
+        return "veiculos/categorias";
+    }
 
 
 }
