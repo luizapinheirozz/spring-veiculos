@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Veículo</title>
+    <!-- Adicione qualquer estilo adicional aqui -->
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center my-4">Detalhes do Veículo</h1>
+    <div>
+        <p><strong>Marca:</strong> <span th:text="${veiculo.marca}"></span></p>
+        <p><strong>Modelo:</strong> <span th:text="${veiculo.modelo}"></span></p>
+        <p><strong>Categoria:</strong> <span th:text="${veiculo.categoria}"></span></p>
+        <p><strong>Cor:</strong> <span th:text="${veiculo.cor}"></span></p>
+        <p><strong>Placa:</strong> <span th:text="${veiculo.placa}"></span></p>
+        <p><strong>Ano:</strong> <span th:text="${veiculo.ano}"></span></p>
+        <p><strong>Descrição:</strong> <span th:text="${veiculo.descricao}"></span></p>
+        <p><strong>Data de Criação:</strong> <span th:text="${veiculo.dataCriacao}"></span></p>
+        <!-- Adicione mais informações do veículo conforme necessário -->
+        <img th:src="@{'/images/' + ${veiculo.imageFileName}}" alt="Imagem do Veículo" width="300">
+        <br>
+        <a href="#">Contate o anunciante</a>
+    </div>
+</div>
+</body>
+</html>

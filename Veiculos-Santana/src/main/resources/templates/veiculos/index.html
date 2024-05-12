@@ -12,12 +12,49 @@
 <div class="container">
     <h1 class="text-center my-4">Todos os veículos</h1>
 
-    <a class="btn btn-primary" href="/veiculos/create">Inserir veículo</a>
+    <br>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Veículos Santana</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorias
+                        </a>
+                        <!-- index.html -->
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <!-- Iterar sobre as categorias para construir os itens de menu dropdown -->
+                            <li th:each="categoria : ${categorias}">
+                                <a class="dropdown-item" th:href="@{'/veiculos/categoria?categoria=' + ${categoria}}"
+                                   th:text="${categoria}"></a>
+                            </li>
+                        </ul>
+
+                    </li>
+                </ul>
+                <form class="d-flex" action="/veiculos" method="GET">
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar" name="termoPesquisa">
+                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                </form>
+            </div>
+            <a class="btn btn-primary" href="/veiculos/create">Cadastrar veículo</a>
+        </div>
+    </nav>
+
+    <br>
+
+
 
     <table class="table">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Marca</th>
             <th>Modelo</th>
             <th>Categoria</th>
@@ -31,7 +68,6 @@
         </thead>
         <tbody>
         <tr th:each="veiculo : ${veiculos}">
-            <td th:text="${veiculo.id}"></td>
             <td th:text="${veiculo.marca}"></td>
             <td th:text="${veiculo.modelo}"></td>
             <td th:text="${veiculo.categoria}"></td>
@@ -39,14 +75,13 @@
             <td th:text="${veiculo.placa}"></td>
             <td th:text="${veiculo.ano}"></td>
             <td>
-                <img th:src="@{'/images/' + ${veiculo.imageFileName}}" alt="..." width="100">
+                <img th:src="@{'/images/' + ${veiculo.imageFileName}}" alt="..." width="150">
             </td>
             <td th:text="${veiculo.dataCriacao.toString().substring(0, 10)}"></td>
             <td style="white-space:nowrap">
-                <a class="btn btn-primary btn-sm"
-                   th:href="@{/veiculos/edit(id=${veiculo.id})}">Edit</a>
-                <a class="btn btn-danger btn-sm"
-                   th:href="@{/veiculos/delete(id=${veiculo.id})}" onclick="return confirm('Você tem certeza?')">Delete</a>
+                <a class="btn btn-primary btn-sm" th:href="@{/veiculos/edit(id=${veiculo.id})}">Editar</a>
+                <a class="btn btn-danger btn-sm" th:href="@{/veiculos/delete(id=${veiculo.id})}" onclick="return confirm('Você tem certeza?')">Excluir</a>
+                <a class="btn btn-info btn-sm" th:href="@{/veiculos/detalhes/{id}(id=${veiculo.id})}">Detalhes</a> <!-- Novo link para os detalhes -->
             </td>
         </tr>
         </tbody>

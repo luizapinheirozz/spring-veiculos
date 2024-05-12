@@ -46,12 +46,14 @@
                     <label class="col-sm-4 col-form-label">Categoria</label>
                     <div class="col-sm-8">
                         <select class="form-select" th:field="${veiculoDto.categoria}">
-                            <option value='--'>--</option>
+                            <option value='--r'>--</option>
                             <option value='Caminhões'>Caminhões</option>
                             <option value='Camionetes'>Camionetes</option>
                             <option value='SUV'>SUV</option>
                             <option value='Sedan'>Sedan</option>
-                            <option value='Passeio'>Passeio</option>
+                            <option value='Sedan'>Crossover</option>
+                            <option value='Hatch'>Hatch</option>
+                            <option value='Esportivo'>Esportivo</option>
                         </select>
                         <p th:if="${#fields.hasErrors('categoria')}" th:errorClass="text-danger" th:errors="${veiculoDto.categoria}"></p>
                     </div>

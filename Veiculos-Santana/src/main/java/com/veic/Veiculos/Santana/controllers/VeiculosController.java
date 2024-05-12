@@ -20,6 +20,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/veiculos")
@@ -29,11 +31,24 @@ public class VeiculosController {
     private VeiculosRepository repo;
 
     @GetMapping({"", "/"})
-    public String showVeiculosList(Model model) {
-        List<Veiculo> veiculos = repo.findAll(Sort.by(Sort.Direction.ASC, "id"));
+    public String showVeiculosList(@RequestParam(required = false) String termoPesquisa, Model model) {
+        List<Veiculo> veiculos;
+        if (termoPesquisa != null && !termoPesquisa.isEmpty()) {
+            veiculos = repo.findByModeloOrAno(termoPesquisa, termoPesquisa);
+        } else {
+            veiculos = repo.findAll(Sort.by(Sort.Direction.ASC, "id"));
+        }
+
+        // Extrair categorias únicas dos veículos
+        Set<String> categorias = repo.findDistinctCategorias();
+
         model.addAttribute("veiculos", veiculos);
+        model.addAttribute("categorias", categorias);
+
         return "veiculos/index";
     }
+
+
 
     @GetMapping("/create")
     public String showCreatePage(Model model) {
@@ -192,4 +207,24 @@ public class VeiculosController {
 
         return "redirect:/veiculos";
     }
+
+
+    @GetMapping("/categoria")
+    public String showVeiculosByCategoria(@RequestParam String categoria, Model model) {
+        List<Veiculo> veiculos = repo.findByCategoria(categoria);
+        Set<String> categorias = repo.findDistinctCategorias();
+        model.addAttribute("veiculos", veiculos);
+        model.addAttribute("categorias", categorias);
+        return "veiculos/index";
+    }
+
+    @GetMapping("/detalhes/{id}")
+    public String showVeiculoDetails(@PathVariable int id, Model model) {
+        Veiculo veiculo = repo.findById(id).orElseThrow(() -> new IllegalArgumentException("Veículo não encontrado"));
+        model.addAttribute("veiculo", veiculo);
+        return "veiculos/details";
+    }
+
+
+
 }
