@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #FFFFFF;
+    background-color: #0E0D0F;
+    font-family: "Inter", sans-serif;
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.veiculos-santana {
+    text-transform: uppercase;
+    margin-right: 131px;
+    margin-top: 32px;
+}
+
+.veiculos-santana .veic {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 9.971px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 2.991px;
+}
+
+.veiculos-santana .sant {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24.736px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+ul.categorias {
+    margin-top: 62px;
+    list-style: none;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: normal;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+
+}
+
+.categorias li {
+    margin-right: 50px;
+    transition: 1s all;
+}
+
+
+.categorias li:hover {
+    cursor: pointer;
+    color: aqua;
+    transition: 1s all;
+}
+
+
+.search {
+    margin-top: 60px;
+    border-radius: 22px;
+    border: 1px solid #000;
+    background: #F1F1F1;
+    width: 260px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    margin-left: 142px;
+}
+
+input {
+    margin-left: 40px;
+    background-color: #F1F1F1;
+    border: none;
+    outline: none;
+    color: rgba(14, 13, 15, 0.30);
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+}
+
+input:focus {
+    color: #000;
+}
+
+.search-icon{
+    position: absolute;
+    top: 72px;
+}
+
+
+.search img {
+    margin-left: 16px;
+    width: 14px;
+    height: 14.013px;
+    flex-shrink: 0;
+}
+
+.img-principal {
+    margin-top: 47px;
+    text-align: center;
+}
+
+.img-principal img {
+    width: 1920px;
+}
+
+.secao-principal {
+    position: relative;
+}
+
+.secao-principal .texto-principal {
+    max-width: 480px;
+    font-size: 200px;
+    position: absolute;
+    top: 450px;
+    right: 155px;
+    text-align: right;
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 64px;
+    letter-spacing: 6.4px;
+    text-transform: uppercase;
+}
+
+.secao-principal .novo-carro {
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 6.4px;
+    justify-content: end;
+}
+
+.secao-principal .texto-secundario {
+    position: absolute;
+    right: 155px;
+    bottom: 90px;
+    color: #A9A9A9;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+.ultimas-ofertas {
+    margin-left: 300px;
+    margin-top: 92px;
+    font-size: 32.207px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 6.441px;
+    text-transform: uppercase;
+}
+
+/* CARDS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 50px auto;
+}
+
+.card {
+    margin: 20px auto;
+    width: 645px;
+    position: relative;
+    border-radius: 34.566px;
+    background: #141315;
+    height: 471px;
+    color: #FFF;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card img {
+    border-radius: 34.566px;
+    min-width: 645px;
+    max-width: 645px;
+}
+
+.placa-veiculo {
+    border: 1.192px solid rgba(255, 255, 255, 0.40);
+    background: linear-gradient(113deg, rgba(255, 255, 255, 0.30) -4.01%, rgba(153, 153, 153, 0.30) 48.61%, rgba(198, 198, 198, 0.30) 82.48%, rgba(255, 255, 255, 0.30) 106.16%);
+    padding: 6px 13px;
+    border-radius: 16px;
+    position: absolute;
+    top: 25px;
+    right: 27px;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.modelo-veiculo {
+    position: absolute;
+    left: 27px;
+    bottom: 47px;
+    font-size: 23.713px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.marca-veiculo {
+    position: absolute;
+    left: 27px;
+    bottom: 25px;
+    color: rgba(255, 255, 255, 0.40);
+    font-size: 13.174px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.ano-veiculo {
+    position: absolute;
+    right: 27px;
+    bottom: 47px;
+    font-size: 23.713px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.cor-veiculo {
+    position: absolute;
+    right: 27px;
+    bottom: 25px;
+    color: rgba(255, 255, 255, 0.40);
+    font-size: 13.174px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+
+.mais {
+    width: 22px;
+    height: 22px;
+    margin-top: 4px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mais:hover{
+    transform: scale(1.15);
+}

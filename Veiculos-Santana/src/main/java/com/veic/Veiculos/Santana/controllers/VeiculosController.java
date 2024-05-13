@@ -101,7 +101,7 @@ public class VeiculosController {
 
         repo.save(veiculo);
 
-        return "redirect:/veiculos";
+        return "redirect:/veiculos/admin";
     }
 
 
@@ -181,7 +181,7 @@ public class VeiculosController {
             System.out.println("Exception: " + ex.getMessage());
         }
 
-        return "redirect:/veiculos/";
+        return "redirect:/veiculos/admin";
     }
 
     @GetMapping("/delete")
@@ -205,7 +205,7 @@ public class VeiculosController {
             System.out.println("Exception: " + ex.getMessage());
         }
 
-        return "redirect:/veiculos";
+        return "redirect:/veiculos/admin";
     }
 
 
@@ -228,6 +228,23 @@ public class VeiculosController {
     @GetMapping("/categorias")
     public String showCategorias(Model model) {
         return "veiculos/categorias";
+    }
+
+    @GetMapping("/admin")
+    public String showAdmin(@RequestParam(required = false) String termoPesquisa, Model model) {
+        List<Veiculo> veiculos;
+        if (termoPesquisa != null && !termoPesquisa.isEmpty()) {
+            veiculos = repo.findByModeloOrAno(termoPesquisa, termoPesquisa);
+        } else {
+            veiculos = repo.findAll(Sort.by(Sort.Direction.ASC, "id"));
+        }
+
+        // Extrair categorias únicas dos veículos
+        Set<String> categorias = repo.findDistinctCategorias();
+
+        model.addAttribute("veiculos", veiculos);
+        model.addAttribute("categorias", categorias);
+        return "veiculos/admin";
     }
 
 

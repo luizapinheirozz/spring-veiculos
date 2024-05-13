@@ -1,90 +1,417 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <title>Veículos Santana</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
 <div class="container">
     <style>
-        .cadastrar {
-            margin-right: 10px;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: #FFFFFF;
+            background-color: #0E0D0F;
+            font-family: "Inter", sans-serif;
+        }
+
+
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .veiculos-santana {
+            text-transform: uppercase;
+            margin-right: 131px;
+            margin-top: 37px;
+            text-decoration: none;
+        }
+
+        .veiculos-santana .veic {
+            color: #FFF;
+            font-family: Inter;
+            font-size: 9.971px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            letter-spacing: 2.991px;
+        }
+
+        .veiculos-santana .sant {
+            color: #FFF;
+            font-family: Inter;
+            font-size: 24.736px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+        }
+
+        ul.categorias {
+            margin-top: 62px;
+            list-style: none;
+            text-transform: uppercase;
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: normal;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .categorias li {
+            margin-right: 50px;
+            transition: 1s all;
+        }
+
+        .categorias a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+
+        .categorias a:hover {
+            cursor: pointer;
+            color: aqua;
+            transition: 1s all;
+        }
+
+
+        .search {
+            margin-top: 62px;
+            border-radius: 22px;
+            border: 1px solid #000;
+            background: #F1F1F1;
+            width: 260px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            margin-left: 142px;
+        }
+
+        input {
+            margin-left: 40px;
+            background-color: #F1F1F1;
+            border: none;
+            outline: none;
+            color: rgba(14, 13, 15, 0.30);
+            font-family: "Inter", sans-serif;
+            font-weight: 300;
+        }
+
+        input:focus {
+            color: #000;
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 74.5px;
+        }
+
+
+        .search img {
+            margin-left: 16px;
+            width: 14px;
+            height: 14.013px;
+            flex-shrink: 0;
+        }
+
+        .img-principal {
+            margin-top: 47px;
+            text-align: center;
+        }
+
+        .img-principal img {
+            width: 1863px;
+        }
+
+        .secao-principal {
+            position: relative;
+        }
+
+        .secao-principal .texto-principal {
+            max-width: 480px;
+            font-size: 200px;
+            position: absolute;
+            top: 450px;
+            right: 155px;
+            text-align: right;
+            font-size: 64px;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 64px;
+            letter-spacing: 6.4px;
+            text-transform: uppercase;
+        }
+
+        .secao-principal .novo-carro {
+            font-size: 64px;
+            font-style: italic;
+            font-weight: 600;
+            line-height: 100%;
+            letter-spacing: 6.4px;
+            justify-content: end;
+        }
+
+        .secao-principal .texto-secundario {
+            position: absolute;
+            right: 155px;
+            bottom: 90px;
+            color: #A9A9A9;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 16px;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+        }
+
+        .ultimas-ofertas {
+            margin-left: 300px;
+            margin-top: 92px;
+            font-size: 32.207px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 6.441px;
+            text-transform: uppercase;
+        }
+
+        /* CARDS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 50px auto;
+        }
+
+        .card {
+            margin: 20px auto;
+            width: 645px;
+            position: relative;
+            border-radius: 34.566px;
+            background: #141315;
+            height: 471px;
+            color: #FFF;
+            text-transform: uppercase;
+            font-family: "Inter", sans-serif;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card img {
+            border-radius: 34.566px;
+            width: 645px;
+            height: 376px;
+        }
+
+        .placa-veiculo {
+            border: 1.192px solid rgba(255, 255, 255, 0.40);
+            background: linear-gradient(113deg, rgba(255, 255, 255, 0.30) -4.01%, rgba(153, 153, 153, 0.30) 48.61%, rgba(198, 198, 198, 0.30) 82.48%, rgba(255, 255, 255, 0.30) 106.16%);
+            padding: 6px 13px;
+            border-radius: 16px;
+            position: absolute;
+            top: 25px;
+            right: 27px;
+            color: #FFF;
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .modelo-veiculo {
+            position: absolute;
+            left: 27px;
+            bottom: 47px;
+            font-size: 23.713px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .marca-veiculo {
+            position: absolute;
+            left: 27px;
+            bottom: 25px;
+            color: rgba(255, 255, 255, 0.40);
+            font-size: 13.174px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .ano-veiculo {
+            position: absolute;
+            right: 27px;
+            bottom: 47px;
+            font-size: 23.713px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .cor-veiculo {
+            position: absolute;
+            right: 27px;
+            bottom: 25px;
+            color: rgba(255, 255, 255, 0.40);
+            font-size: 13.174px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .card:hover {
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+
+
+        .mais {
+            width: 22px;
+            height: 22px;
+            margin-top: 4px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mais:hover {
+            transform: scale(1.15);
+        }
+
+        footer {
+            border-top: 1px solid #363636;
+            height: 180px;
+            text-align: center;
+        }
+
+        .admin {
+            display: inline-block;
+            margin-top: 50px;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.40);
+            font-size: 20.909px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20.909px;
+            letter-spacing: 4.182px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .creditos {
+            margin-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
         }
     </style>
 
-    <h1 class="text-center my-4">Todos os veículos</h1>
+    <!--codigo novo -->
+    <nav class="menu">
+        <a href="/veiculos" class="veiculos-santana"><span class="veic">Veículos</span><br> <span
+                class="sant">Santana</span></a>
 
-    <br>
+        <ul class="categorias">
+            <!-- Iterar sobre as categorias para construir os itens de menu -->
+            <li th:each="categoria : ${categorias}" class="nav-item">
+                <a class="nav-link" th:href="@{'/veiculos/categoria?categoria=' + ${categoria}}"
+                   th:text="${categoria}"></a>
+            </li>
+            <li><img class="mais" src="/images/img/mais.svg" alt=""></li>
+        </ul>
 
+
+        <div class="search">
+            <form class="search-container" action="/veiculos" method="GET">
+                <img class="search-icon" src="/images/img/Search.svg">
+                <input class="search-input" type="text" placeholder="Pesquisar veículo" name="termoPesquisa">
+            </form>
+        </div>
+
+    </nav>
+
+    <!-- fim codigo novo -->
+
+    <!-- código talvez util
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Veículos Santana</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <!-- Iterar sobre as categorias para construir os itens de menu -->
-                    <li th:each="categoria : ${categorias}" class="nav-item">
-                        <a class="nav-link" th:href="@{'/veiculos/categoria?categoria=' + ${categoria}}"
-                           th:text="${categoria}"></a>
-                    </li>
-                </ul>
-                <form class="d-flex" action="/veiculos" method="GET">
-                    <input class="form-control me-2" type="search" placeholder="Pesquisar" name="termoPesquisa">
-                </form>
-            </div>
+
             <a class="btn btn-primary cadastrar" href="/veiculos/create">Cadastrar veículo</a>
             <a class="btn btn-secondary" href="veiculos/categorias">Admin</a>
         </div>
     </nav>
-
-    <br>
-
+    fim do código talvez util -->
 
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Categoria</th>
-            <th>Cor</th>
-            <th>Placa</th>
-            <th>Ano</th>
-            <th>Imagem</th>
-            <th>Data de publicação</th>
-            <th>Ações</th> <!-- edit and delete -->
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="veiculo : ${veiculos}">
-            <td th:text="${veiculo.marca}"></td>
-            <td th:text="${veiculo.modelo}"></td>
-            <td th:text="${veiculo.categoria}"></td>
-            <td th:text="${veiculo.cor}"></td>
-            <td th:text="${veiculo.placa}"></td>
-            <td th:text="${veiculo.ano}"></td>
-            <td>
-                <img th:src="@{'/images/' + ${veiculo.imageFileName}}" alt="..." width="150">
-            </td>
-            <td th:text="${veiculo.dataCriacao.toString().substring(0, 10)}"></td>
-            <td style="white-space:nowrap">
-                <a class="btn btn-primary btn-sm" th:href="@{/veiculos/edit(id=${veiculo.id})}">Editar</a>
-                <a class="btn btn-danger btn-sm" th:href="@{/veiculos/delete(id=${veiculo.id})}" onclick="return confirm('Você tem certeza?')">Excluir</a>
-                <a class="btn btn-info btn-sm" th:href="@{/veiculos/detalhes/{id}(id=${veiculo.id})}">Detalhes</a> <!-- Novo link para os detalhes -->
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <!-- código bonito -->
+    <div class="secao-principal">
+        <div class="img-principal">
+            <img src="img/Banner.png" alt="">
+        </div>
+
+        <!-- <p class="texto-principal">Seu <span class="novo-carro">novo carro</span> aqui</p>
+        <p class="texto-secundario">Porsche Panamera Turbo</p> -->
+
+    </div>
+
+    <h2 class="ultimas-ofertas">Últimas ofertas</h2>
+
+
+    <div class="cards">
+        <div class="card" th:each="veiculo : ${veiculos}">
+            <a class="link-card" th:href="@{/veiculos/detalhes/{id}(id=${veiculo.id})}">
+                <img th:src="@{'/images/' + ${veiculo.imageFileName}}" alt="...">
+                <span class="placa-veiculo" th:text="${veiculo.placa}"></span>
+                <span class="modelo-veiculo" th:text="${veiculo.modelo}"></span>
+                <span class="marca-veiculo" th:text="${veiculo.marca}"></span>
+                <span class="ano-veiculo" th:text="${veiculo.ano}"></span>
+                <span class="cor-veiculo" th:text="${veiculo.cor}"></span>
+            </a>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <a class="admin" href="veiculos/admin">Admin</a>
+        <div class="creditos">
+            <p>Desenvolvimento: Luiza Pinheiro</p>
+            <p>Design: Lucas Eguthi</p>
+        </div>
+    </footer>
+
+
+    <a class="btn btn-primary cadastrar" href="/veiculos/create">Cadastrar veículo</a>
+    <a class="btn btn-secondary" href="veiculos/categorias">Admin</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous">
+
+    </script>
 </body>
 </html>

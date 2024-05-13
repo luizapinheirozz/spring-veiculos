@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Veículo</title>
-    <!-- Adicione qualquer estilo adicional aqui -->
+    <title>Veículos Santana</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="detalhes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
+<!--
 <div class="container">
     <h1 class="text-center my-4">Detalhes do Veículo</h1>
     <div>
@@ -18,11 +26,204 @@
         <p><strong>Ano:</strong> <span th:text="${veiculo.ano}"></span></p>
         <p><strong>Descrição:</strong> <span th:text="${veiculo.descricao}"></span></p>
         <p><strong>Data de Criação:</strong> <span th:text="${veiculo.dataCriacao}"></span></p>
-        <!-- Adicione mais informações do veículo conforme necessário -->
+         Adicione mais informações do veículo conforme necessário
         <img th:src="@{'/images/' + ${veiculo.imageFileName}}" alt="Imagem do Veículo" width="300">
         <br>
         <a href="#">Contate o anunciante</a>
     </div>
-</div>
+</div>-->
+
+<style>
+
+    .container {
+        margin-left: 290px;
+        margin-top: 150px;
+    }
+
+
+    .cat {
+        font-size: 20.909px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 20.909px;
+        letter-spacing: 2.091px;
+        text-transform: uppercase;
+    }
+
+    .marca-modelo h3 {
+        display: inline-block;
+        font-size: 65.521px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 65.521px;
+        letter-spacing: -3.276px;
+        margin-top: 3px;
+    }
+
+    .marca-modelo .marca {
+        margin-right: 8px;
+    }
+
+    .marca-modelo .modelo {
+        font-size: 65.521px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        letter-spacing: -3.276px;
+    }
+
+    .contate-anunciante {
+        display: inline-block;
+        text-decoration: none;
+        color: #0E0D0F;
+        font-size: 20.909px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20.909px;
+        padding: 10px 22px;
+        border-radius: 29.5px;
+        background: #89CFFF;
+        margin-top: 18px;
+        transition: 1s all;
+    }
+
+    .contate-anunciante:hover {
+        background: #fff;
+        transition: 1s all;
+    }
+
+    .descricao {
+        margin-top: 22px;
+        width: 260px;
+        color: rgba(255, 255, 255, 0.50);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 12px;
+    }
+
+    .imagem-principal {
+        position: relative;
+    }
+
+
+    .imagem-principal img {
+        position: absolute;
+        top: -200px;
+        left: 375px;
+    }
+
+    .imagem-principal .borda-fundo {
+        top: -245px;
+    }
+
+    .imagem-principal .fundo {
+        top: -230px;
+        left: 392px;
+    }
+
+    .imagem-principal .frente {
+        top: -60px;
+        left: 140px;
+        width: 1054px;
+        height: 480px;
+    }
+
+
+    .info {
+        margin-top: 440px;
+        display: flex;
+        margin-left: 250px;
+        gap: 120px;
+        text-align: center;
+        margin-bottom: 150px;
+    }
+
+    .info h3 {
+        color: rgba(255, 255, 255, 0.70);
+        font-size: 20.909px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 20.909px;
+        letter-spacing: 2.091px;
+        margin-bottom: 13px;
+        text-transform: uppercase;
+    }
+
+    .info p {
+        color: #FFF;
+        font-size: 20.909px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20.909px;
+    }
+</style>
+
+<header>
+    <nav class="menu">
+        <a href="/veiculos" class="veiculos-santana"><span class="veic">Veículos</span><br> <span
+                class="sant">Santana</span></a>
+
+        <ul class="categorias">
+            <li>Sedan</li>
+            <li>SUV</li>
+            <li>Hatch</li>
+            <li>Caminhão</li>
+            <li>Esportivo</li>
+            <li><img class="mais" src="/img/mais.svg" alt=""></li>
+        </ul>
+
+        <div class="search">
+            <form class="search-container">
+                <img class="search-icon" src="/img/Search.svg">
+                <input type="text" id="search-input" placeholder="Pesquisar veículo">
+            </form>
+        </div>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <div class="container">
+        <h3 class="cat"><span th:text="${veiculo.categoria}"></span></h3>
+        <div class="marca-modelo">
+            <h3 class="marca"><span th:text="${veiculo.marca}"></span></h3>
+            <h3 class="modelo"><span th:text="${veiculo.modelo}"></span></h3>
+        </div>
+
+        <a class="contate-anunciante" href="#">Contate o anunciante</a>
+        <p class="descricao"><span th:text="${veiculo.descricao}"></span></p>
+
+        <div class="imagem-principal">
+            <img class="frente" th:src="@{'/images/' + ${veiculo.imageFileName}}" alt="Imagem do Veículo">
+        </div>
+
+        <div class="info">
+            <div class="info-placa">
+                <h3>Placa</h3>
+                <p><span th:text="${veiculo.placa}"></span></p>
+            </div>
+
+            <div class="info-cor">
+                <h3>Cor</h3>
+                <p><span th:text="${veiculo.cor}"></span></p>
+            </div>
+
+            <div class="info-ano">
+                <h3>Ano</h3>
+                <p><span th:text="${veiculo.ano}"></span></p>
+            </div>
+
+            <div class="info-publicacao">
+                <h3>Data de publicação</h3>
+                <p><span th:text="${veiculo.dataCriacao}"></span></p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
 </body>
 </html>
