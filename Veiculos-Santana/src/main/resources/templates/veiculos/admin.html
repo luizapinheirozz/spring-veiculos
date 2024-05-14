@@ -11,16 +11,67 @@
 <body>
 <div class="container">
     <style>
-        .cadastrar {
+        .navzinha .cadastrar {
+            margin-right: 10px;
+            background-color: deeppink;
+            border: none;
+        }
+
+        .cadastrar:hover {
+            color: #F1F1F1;
+            background-color: #4a4a4a;
+        }
+
+        body, .table tr, .table td, .table th {
+            background-color: #0E0D0F;
+            color: #FFFFFF;
+        }
+
+        .table tr, .table td, .table th {
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .navzinha a, .navzinha div, .navzinha button, .navzinha ul li{
+            background-color: #0E0D0F;
+            color: #FFFFFF;
+        }
+
+        .cor li a {
+            background-color: #ffffff;
+            color: #0E0D0F;
             margin-right: 10px;
         }
+
+        .aqua {
+            background-color: aqua;
+            color: #0E0D0F;
+            border: none;
+        }
+
+        .purple {
+            background-color: mediumpurple;
+            color: #0E0D0F;
+            border: none;
+        }
+
+        .navzinha .yellow {
+            background-color: #fff25f;
+            color: #0E0D0F;
+            border: none;
+        }
+
+        .yellow:hover {
+            color: #F1F1F1;
+            background-color: #4a4a4a;
+        }
+
     </style>
 
     <h1 class="text-center my-4">Todos os veículos</h1>
 
     <br>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navzinha">
         <div class="container-fluid">
             <a class="navbar-brand" href="/veiculos">Veículos Santana</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -28,7 +79,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav cor">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +100,7 @@
                 </form>
             </div>
             <a class="btn btn-primary cadastrar" href="/veiculos/create">Cadastrar veículo</a>
-            <a class="btn btn-secondary" href="veiculos/categorias">Cadastrar categoria</a>
+            <a class="btn btn-secondary yellow" href="categorias">Categorias</a>
         </div>
     </nav>
 
@@ -84,8 +135,8 @@
             </td>
             <td th:text="${veiculo.dataCriacao.toString().substring(0, 10)}"></td>
             <td style="white-space:nowrap">
-                <a class="btn btn-primary btn-sm" th:href="@{/veiculos/edit(id=${veiculo.id})}">Editar</a>
-                <a class="btn btn-danger btn-sm" th:href="@{/veiculos/delete(id=${veiculo.id})}" onclick="return confirm('Você tem certeza?')">Excluir</a>
+                <a class="btn btn-primary btn-sm aqua" th:href="@{/veiculos/edit(id=${veiculo.id})}">Editar</a>
+                <a class="btn btn-danger btn-sm purple" th:href="@{/veiculos/delete(id=${veiculo.id})}" onclick="return confirm('Você tem certeza?')">Excluir</a>
                 <!--<a class="btn btn-info btn-sm" th:href="@{/veiculos/detalhes/{id}(id=${veiculo.id})}">Detalhes</a>  Novo link para os detalhes -->
             </td>
         </tr>

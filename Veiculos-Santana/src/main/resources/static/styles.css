@@ -21,7 +21,8 @@ body {
 .veiculos-santana {
     text-transform: uppercase;
     margin-right: 131px;
-    margin-top: 32px;
+    margin-top: 37px;
+    text-decoration: none;
 }
 
 .veiculos-santana .veic {
@@ -62,8 +63,13 @@ ul.categorias {
     transition: 1s all;
 }
 
+.categorias a {
+    color: #FFF;
+    text-decoration: none;
+}
 
-.categorias li:hover {
+
+.categorias a:hover {
     cursor: pointer;
     color: aqua;
     transition: 1s all;
@@ -71,7 +77,7 @@ ul.categorias {
 
 
 .search {
-    margin-top: 60px;
+    margin-top: 62px;
     border-radius: 22px;
     border: 1px solid #000;
     background: #F1F1F1;
@@ -96,9 +102,9 @@ input:focus {
     color: #000;
 }
 
-.search-icon{
+.search-icon {
     position: absolute;
-    top: 72px;
+    top: 74.5px;
 }
 
 
@@ -175,6 +181,8 @@ input:focus {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    color: #FFF;
 }
 
 .cards {
@@ -200,8 +208,8 @@ input:focus {
 
 .card img {
     border-radius: 34.566px;
-    min-width: 645px;
     max-width: 645px;
+    max-height: 376px;
 }
 
 .placa-veiculo {
@@ -275,6 +283,33 @@ input:focus {
     transition: transform 0.3s ease-in-out;
 }
 
-.mais:hover{
+.mais:hover {
     transform: scale(1.15);
+}
+
+footer {
+    border-top: 1px solid #363636;
+    height: 180px;
+    text-align: center;
+}
+
+.admin {
+    display: inline-block;
+    margin-top: 50px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.40);
+    font-size: 20.909px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20.909px;
+    letter-spacing: 4.182px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.creditos {
+    margin-top: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
 }

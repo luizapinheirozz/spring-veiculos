@@ -210,21 +210,23 @@
 
         .card {
             margin: 20px auto;
-            width: 645px;
+            width: 630px;
             position: relative;
             border-radius: 34.566px;
             background: #141315;
             height: 471px;
             color: #FFF;
             text-transform: uppercase;
+            text-align: center;
             font-family: "Inter", sans-serif;
             transition: transform 0.3s ease-in-out;
         }
 
         .card img {
             border-radius: 34.566px;
-            width: 645px;
+            width: 630px;
             height: 376px;
+            border-bottom: 1px solid #4a4a4a;
         }
 
         .placa-veiculo {
@@ -292,6 +294,7 @@
 
 
         .mais {
+            cursor: pointer;
             width: 22px;
             height: 22px;
             margin-top: 4px;
@@ -341,7 +344,8 @@
                 <a class="nav-link" th:href="@{'/veiculos/categoria?categoria=' + ${categoria}}"
                    th:text="${categoria}"></a>
             </li>
-            <li><img class="mais" src="/images/img/mais.svg" alt=""></li>
+
+            <li><a href="veiculos/categorias"><img class="mais" src="/images/img/mais.svg" alt=""></a></li>
         </ul>
 
 
@@ -399,19 +403,9 @@
     <footer>
         <a class="admin" href="veiculos/admin">Admin</a>
         <div class="creditos">
-            <p>Desenvolvimento: Luiza Pinheiro</p>
-            <p>Design: Lucas Eguthi</p>
+            <p>Site desenvolvido por: Luiza Pinheiro</p>
         </div>
     </footer>
 
-
-    <a class="btn btn-primary cadastrar" href="/veiculos/create">Cadastrar veículo</a>
-    <a class="btn btn-secondary" href="veiculos/categorias">Admin</a>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous">
-
-    </script>
 </body>
 </html>

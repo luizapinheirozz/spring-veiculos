@@ -8,6 +8,44 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+
+    <style>
+        body {
+            background-color: #0E0D0F;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+
+        .table td, .table tr, .table th {
+            background-color: #0E0D0F;
+            color: #FFF;
+            text-align: center;
+            border-bottom: 1px solid #3e3e3e;
+        }
+
+        .container {
+            width: 600px;
+        }
+
+        .aqua {
+            background-color: aqua;
+            color: #0E0D0F;
+            margin-right: 4px;
+        }
+
+        .purple {
+            background-color: mediumpurple;
+            color: #0E0D0F;
+            border: none;
+        }
+
+        .yellow {
+            background-color: #fff25f;
+            color: #0E0D0F;
+        }
+    </style>
+
     <div class="container">
         <br>
         <h1>Categorias</h1>
@@ -27,8 +65,8 @@
                 <td>1</td>
                 <td>Sedan</td>
                 <td style="white-space:nowrap">
-                    <a class="btn btn-primary btn-sm" href="#">Editar</a>
-                    <a class="btn btn-danger btn-sm" href="#" onclick="return confirm('Você tem certeza?')">Excluir</a>
+                    <a class="btn btn-primary btn-sm aqua" href="#">Editar</a>
+                    <a class="btn btn-danger btn-sm purple" href="#" onclick="return confirm('Você tem certeza?')">Excluir</a>
                 </td>
             </tr>
 
@@ -36,8 +74,8 @@
                 <td>2</td>
                 <td>SUV</td>
                 <td style="white-space:nowrap">
-                    <a class="btn btn-primary btn-sm" href="#">Editar</a>
-                    <a class="btn btn-danger btn-sm" href="#" onclick="return confirm('Você tem certeza?')">Excluir</a>
+                    <a class="btn btn-primary btn-sm aqua" href="#">Editar</a>
+                    <a class="btn btn-danger btn-sm purple" href="#" onclick="return confirm('Você tem certeza?')">Excluir</a>
                 </td>
             </tr>
 
@@ -46,8 +84,8 @@
                 <td>3</td>
                 <td>Hatch</td>
                 <td style="white-space:nowrap">
-                    <a class="btn btn-primary btn-sm" href="#">Editar</a>
-                    <a class="btn btn-danger btn-sm" href="#" onclick="return confirm('Você tem certeza?')">Excluir</a>
+                    <a class="btn btn-primary btn-sm aqua" href="#">Editar</a>
+                    <a class="btn btn-danger btn-sm purple" href="#" onclick="return confirm('Você tem certeza?')">Excluir</a>
                 </td>
             </tr>
 
@@ -55,24 +93,26 @@
                 <td>4</td>
                 <td>Esportivo</td>
                 <td style="white-space:nowrap">
-                    <a class="btn btn-primary btn-sm" href="#">Editar</a>
-                    <a class="btn btn-danger btn-sm" href="#" onclick="return confirm('Você tem certeza?')">Excluir</a>
+                    <a class="btn btn-primary btn-sm aqua" href="#">Editar</a>
+                    <a class="btn btn-danger btn-sm purple" href="#" onclick="return confirm('Você tem certeza?')">Excluir</a>
                 </td>
             </tr>
 
             <tr>
                 <td>5</td>
-                <td>Caminhões</td>
+                <td>Caminhão</td>
                 <td style="white-space:nowrap">
-                    <a class="btn btn-primary btn-sm" href="#">Editar</a>
-                    <a class="btn btn-danger btn-sm" href="#" onclick="return confirm('Você tem certeza?')">Excluir</a>
+                    <a class="btn btn-primary btn-sm aqua" href="#">Editar</a>
+                    <a class="btn btn-danger btn-sm purple" href="#" onclick="return confirm('Você tem certeza?')">Excluir</a>
                 </td>
             </tr>
             </tbody>
         </table>
 
+        <br>
 
-        <a class="btn btn-secondary" href="#">Cadastrar categoria</a>
+
+        <a class="btn btn-secondary yellow" href="#">Cadastrar categoria</a>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

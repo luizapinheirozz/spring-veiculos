@@ -36,7 +36,7 @@ public class VeiculosController {
         if (termoPesquisa != null && !termoPesquisa.isEmpty()) {
             veiculos = repo.findByModeloOrAno(termoPesquisa, termoPesquisa);
         } else {
-            veiculos = repo.findAll(Sort.by(Sort.Direction.ASC, "id"));
+            veiculos = repo.findAll(Sort.by(Sort.Direction.DESC, "id"));
         }
 
         // Extrair categorias únicas dos veículos
