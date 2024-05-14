@@ -247,5 +247,10 @@ public class VeiculosController {
         return "veiculos/admin";
     }
 
+    @GetMapping("/createcategoria")
+    public String showCreatecategoria(Model model) {
+        return "veiculos/CreateCategoria";
+    }
+
 
 }
